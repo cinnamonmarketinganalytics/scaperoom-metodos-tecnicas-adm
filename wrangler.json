@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "scaperoom-metodos-tecnicas-adm",
   "main": "worker.js",
-  "compatibility_date": "2025-01-01",
+  "compatibility_date": "2024-09-01",
   "build": {
     "command": "npm run build"
   },
