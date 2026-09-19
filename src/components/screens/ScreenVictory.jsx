@@ -21,7 +21,8 @@ export default function ScreenVictory({ onOpenAdmin }) {
     correctCount, 
     members, 
     elapsedTime, 
-    formatTime 
+    formatTime,
+    returnToHome
   } = useGame();
 
   const isAlfa = teamName?.toLowerCase().includes('alfa');
@@ -188,17 +189,25 @@ export default function ScreenVictory({ onOpenAdmin }) {
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <button
               type="button"
+              onClick={returnToHome}
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 hover:from-cyan-300 hover:to-indigo-400 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 transform active:scale-95"
+            >
+              <RotateCcw className="w-4 h-4" />
+              Voltar ao Início (Escolher Equipe)
+            </button>
+            <button
+              type="button"
               onClick={triggerConfetti}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition"
+              className="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition"
             >
               Comemorar Novamente 🎉
             </button>
             <button
               type="button"
               onClick={onOpenAdmin}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition glow-cyan"
+              className="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-400 border border-slate-700 font-bold text-xs uppercase tracking-wider transition"
             >
-              Ver Placar no Painel do Professor
+              Painel do Professor
             </button>
           </div>
 

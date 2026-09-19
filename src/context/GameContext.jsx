@@ -420,6 +420,30 @@ export function GameProvider({ children }) {
     }
   };
 
+  // Voltar para a tela inicial (seleção de equipe)
+  const returnToHome = () => {
+    setStatus('idle');
+    setTeamName(null);
+    setMembers([]);
+    setCurrentRoom(1);
+    setScore(0);
+    setErrorsCount(0);
+    setCorrectCount(0);
+    setStartedAt(null);
+    setCompletedAt(null);
+    setAnsweredTheory({ 1: false, 2: false, 3: false, 4: false });
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+  };
+
+  // Resetar todas as equipes (Ambas Alfa e Beta)
+  const resetAllSessions = async () => {
+    await Promise.all([
+      resetSession('alfa'),
+      resetSession('beta')
+    ]);
+    returnToHome();
+  };
+
   return (
     <GameContext.Provider
       value={{
@@ -444,6 +468,8 @@ export function GameProvider({ children }) {
         submitRoomCode,
         submitSwotDiagnostic,
         resetSession,
+        resetAllSessions,
+        returnToHome,
         showToast
       }}
     >

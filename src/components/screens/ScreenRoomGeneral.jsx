@@ -193,13 +193,13 @@ export default function ScreenRoomGeneral({ roomNumber }) {
             }`}>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-2 text-cyan-400">
                 <MapPin className="w-4 h-4 animate-bounce" />
-                <span>Pista de Campo no Campus (Desafio Físico)</span>
+                <span>Enigma de Campo (Local Oculto no Campus)</span>
               </div>
-              <h4 className="text-base sm:text-xl font-bold text-white mb-2">
+              <h4 className="text-base sm:text-lg font-bold text-white mb-2 leading-relaxed">
                 {teamRoomData.fieldClue}
               </h4>
               <p className="text-xs text-slate-400">
-                Encontre o código alfanumérico no local indicado e digite-o no validador abaixo para desbloquear a próxima sala.
+                Decifre o enigma acima para descobrir onde investigar no campus e encontrar o código físico lacrado.
               </p>
             </div>
 
@@ -224,10 +224,10 @@ export default function ScreenRoomGeneral({ roomNumber }) {
                     type="text"
                     value={enteredCode}
                     onChange={(e) => setEnteredCode(e.target.value.toUpperCase())}
-                    placeholder="EX: CODIGO-PALAVRA-99"
+                    placeholder="DIGITE-O-CODIGO-AQUI"
                     className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 font-mono-code text-base sm:text-lg tracking-widest text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 uppercase transition"
                   />
-                  <p className="text-[11px] text-slate-500 mt-1.5">
+                  <p className="text-[11px] font-mono-code text-cyan-400/90 mt-1.5 font-semibold">
                     {teamRoomData.codeHint}
                   </p>
                 </div>

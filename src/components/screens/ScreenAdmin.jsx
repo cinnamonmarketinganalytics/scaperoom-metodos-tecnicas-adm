@@ -13,11 +13,12 @@ import {
   Flame, 
   Activity,
   Award,
-  Layers
+  Layers,
+  Trash2
 } from 'lucide-react';
 
 export default function ScreenAdmin({ onExitAdmin }) {
-  const { resetSession, formatTime } = useGame();
+  const { resetSession, resetAllSessions, formatTime } = useGame();
 
   const [alfaData, setAlfaData] = useState(null);
   const [betaData, setBetaData] = useState(null);
@@ -81,7 +82,11 @@ export default function ScreenAdmin({ onExitAdmin }) {
   };
 
   const handleReset = async (teamKey) => {
-    await resetSession(teamKey);
+    if (teamKey === 'all') {
+      await resetAllSessions();
+    } else {
+      await resetSession(teamKey);
+    }
     setConfirmResetTeam(null);
   };
 
@@ -110,14 +115,25 @@ export default function ScreenAdmin({ onExitAdmin }) {
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={onExitAdmin}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold uppercase tracking-wider transition"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Voltar ao Jogo
-        </button>
+        <div className="flex flex-wrap items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setConfirmResetTeam('all')}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rose-950/80 hover:bg-rose-900 text-rose-300 hover:text-white border border-rose-700/60 text-xs font-bold uppercase tracking-wider transition glow-red shadow-lg transform active:scale-95"
+          >
+            <Trash2 className="w-4 h-4 text-rose-400" />
+            Apagar Todas as Tentativas
+          </button>
+
+          <button
+            type="button"
+            onClick={onExitAdmin}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 text-xs font-bold uppercase tracking-wider transition"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Voltar ao Jogo
+          </button>
+        </div>
       </div>
 
       {/* Cards de Monitoramento das Duas Equipes */}
@@ -336,7 +352,15 @@ export default function ScreenAdmin({ onExitAdmin }) {
               <h3 className="font-bold text-white text-base font-tech">Confirmar Reset</h3>
             </div>
             <p className="text-xs text-slate-300">
-              Tem certeza que deseja resetar completamente a sessão da <strong>Equipe {confirmResetTeam.toUpperCase()}</strong>? O placar, timer e sala serão reiniciados a zero.
+              {confirmResetTeam === 'all' ? (
+                <span>
+                  Tem certeza que deseja <strong>apagar e zerar as tentativas de AMBAS as equipes</strong> (Alfa e Beta)? Todos os placares, erros, tempos e salas serão reiniciados a zero.
+                </span>
+              ) : (
+                <span>
+                  Tem certeza que deseja resetar completamente a sessão da <strong>Equipe {confirmResetTeam.toUpperCase()}</strong>? O placar, timer e sala serão reiniciados a zero.
+                </span>
+              )}
             </p>
             <div className="flex items-center justify-end gap-3 pt-2">
               <button
@@ -351,7 +375,7 @@ export default function ScreenAdmin({ onExitAdmin }) {
                 onClick={() => handleReset(confirmResetTeam)}
                 className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold uppercase tracking-wider"
               >
-                Sim, Resetar Sessão
+                {confirmResetTeam === 'all' ? 'Sim, Apagar Tudo' : 'Sim, Resetar Sessão'}
               </button>
             </div>
           </div>

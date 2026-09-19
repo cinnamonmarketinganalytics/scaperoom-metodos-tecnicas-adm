@@ -5,10 +5,7 @@ import {
   ShieldAlert, 
   MapPin, 
   Calculator, 
-  CheckCircle, 
   Send, 
-  Trophy, 
-  Info,
   Flame
 } from 'lucide-react';
 
@@ -65,7 +62,7 @@ export default function ScreenRoom5Swot() {
         </p>
       </div>
 
-      {/* Pista de Campo Física */}
+      {/* Pista de Campo Física (Enigma) */}
       <div className={`p-5 sm:p-7 rounded-2xl border mb-6 ${
         isAlfa 
           ? 'bg-gradient-to-br from-cyan-950/50 via-slate-900 to-slate-900 border-cyan-500 glow-cyan' 
@@ -73,21 +70,14 @@ export default function ScreenRoom5Swot() {
       }`}>
         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-2 text-cyan-400">
           <MapPin className="w-4 h-4 animate-bounce" />
-          <span>Missão de Campo: Pista Física dos Quadrantes</span>
+          <span>Missão de Campo: O Enigma dos 4 Quadrantes</span>
         </div>
-        <h3 className="text-lg sm:text-2xl font-bold text-white mb-2">
+        <h3 className="text-base sm:text-xl font-bold text-white mb-2 leading-relaxed">
           {swotData.fieldClue}
         </h3>
         <p className="text-xs sm:text-sm text-slate-300">
-          Localize os valores numéricos dos 4 quadrantes da Matriz (<strong className="text-white">Q1 = Forças</strong>, <strong className="text-white">Q2 = Oportunidades</strong>, <strong className="text-white">Q3 = Fraquezas</strong>, <strong className="text-white">Q4 = Ameaças</strong>) e calcule os indicadores estratégicos abaixo.
+          Decifre o local, encontre os valores numéricos dos 4 quadrantes da Matriz e utilize seus conhecimentos acadêmicos para determinar os 3 diagnósticos estratégicos abaixo.
         </p>
-
-        <div className="mt-4 p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs text-slate-400 flex items-center gap-2">
-          <Info className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-          <span>
-            {swotData.hintValues}
-          </span>
-        </div>
       </div>
 
       {/* Formulário dos 3 Diagnósticos Estratégicos */}
@@ -105,14 +95,11 @@ export default function ScreenRoom5Swot() {
         </div>
 
         <div className="space-y-6">
-          {swotData.diagnostics.map((diag, index) => (
+          {swotData.diagnostics.map((diag) => (
             <div key={diag.id} className="p-4 sm:p-5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <span className="text-sm font-bold text-slate-100">
+              <div className="flex items-center justify-between">
+                <span className="text-sm sm:text-base font-bold text-slate-100">
                   {diag.label}
-                </span>
-                <span className="text-xs font-mono-code text-cyan-400 font-semibold bg-cyan-950/40 px-2 py-0.5 rounded border border-cyan-900">
-                  Fórmula: {diag.formula}
                 </span>
               </div>
 

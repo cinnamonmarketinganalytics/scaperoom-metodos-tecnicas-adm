@@ -115,7 +115,7 @@ export default function ScreenRegistration({ onOpenAdmin }) {
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-tech text-base sm:text-lg font-bold text-amber-300">
-                      Equipe Beta
+                      Equipe Beta (Bravo)
                     </span>
                     {!isAlfa && <Check className="w-4 h-4 text-amber-400" />}
                   </div>

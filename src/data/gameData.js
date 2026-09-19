@@ -1,6 +1,7 @@
 /**
  * Configuração dos Enigmas, Perguntas, Pistas Físicas e Códigos de Acesso
  * para a Equipe Alfa e Equipe Beta.
+ * Enigmas crípticos de campo sem menção explícita de nomes de salas.
  */
 
 export const ROOMS_CONFIG = {
@@ -18,9 +19,9 @@ export const ROOMS_CONFIG = {
         "Sabedoria"
       ],
       correctAnswer: "Dado",
-      fieldClue: "Vá à Secretaria da Direção e procure o envelope 'SETZER'.",
+      fieldClue: "Onde os decretos ganham chancela e a alta gestão traça as diretrizes da instituição, guardiões silenciosos arquivam registros e decisões. Procure no epicentro do comando administrativo o invólucro que ostenta o selo 'SETZER'.",
       secretCode: "DADO-SINTAXE-31",
-      codeHint: "Formato esperado: DADO-SINTAXE-XX (encontrado no envelope da Secretaria)"
+      codeHint: "Formato esperado: DADO-XXXX-XX"
     },
     beta: {
       question: "Segundo a abordagem de Bolisani & Bratianu, o conhecimento organizacional não é meramente um recurso estático de processamento, mas se comporta conceitualmente de forma similar a qual grandeza física contínua?",
@@ -31,9 +32,9 @@ export const ROOMS_CONFIG = {
         "Entropia"
       ],
       correctAnswer: "Energia",
-      fieldClue: "Vá à Biblioteca e ache o livro marcado com fita amarela.",
+      fieldClue: "No templo do silêncio sagrado onde mil mentes repousam impressas em estantes infinitas, procure onde o conhecimento humano foi encadernado. Entre as fileiras do saber catalogado, um tomo misterioso foi marcado com a cor do ouro solar.",
       secretCode: "ENERGIA-TERMODINAMICA-84",
-      codeHint: "Formato esperado: ENERGIA-TERMODINAMICA-XX (encontrado no livro na Biblioteca)"
+      codeHint: "Formato esperado: ENERGIA-XXXX-XX"
     }
   },
   2: {
@@ -50,9 +51,9 @@ export const ROOMS_CONFIG = {
         "Dogmático, infalível, valorativo, de inspiração sobrenatural"
       ],
       correctAnswer: "Valorativo, racional, sistemático, não verificável, infalível",
-      fieldClue: "Vá ao Jardim Central e leia o QR Code na árvore de amora.",
+      fieldClue: "Ao ar livre, onde raízes abraçam a terra no coração geográfico do campus, procure o ser vivo que floresce e oferta pequenos frutos escuros sob o céu. Em sua casca rústica, um portal geométrico bidimensional aguarda a leitura óptica.",
       secretCode: "FILOSOFICO-ARISTOTELES-9",
-      codeHint: "Formato esperado: FILOSOFICO-ARISTOTELES-X (obtido no QR Code da árvore de amora)"
+      codeHint: "Formato esperado: FILOSOFICO-XXXX-X"
     },
     beta: {
       question: "Ao calcular a circunferência da Terra medindo a sombra projetada em Alexandria e Siena no solstício de verão, o experimento histórico de Eratóstenes exemplifica qual modalidade de conhecimento segundo Trujillo Ferrari e quais suas características essenciais?",
@@ -63,9 +64,9 @@ export const ROOMS_CONFIG = {
         "Empírico, assistemático, acrítico, transmitido por tradição"
       ],
       correctAnswer: "Factual, contingente, verificável",
-      fieldClue: "Vá à Sala de Informática e leia o QR Code no Monitor 01.",
+      fieldClue: "No laboratório dos circuitos lógicos e feixes de silício, onde dezenas de mentes navegam pela malha de redes digitais. Encontre o primeiríssimo posto de visualização tecnológica, onde o monitor inicial esconde o código.",
       secretCode: "CIENTIFICO-ERATOSTENES-7",
-      codeHint: "Formato esperado: CIENTIFICO-ERATOSTENES-X (obtido no QR Code do Monitor 01)"
+      codeHint: "Formato esperado: CIENTIFICO-XXXX-X"
     }
   },
   3: {
@@ -82,9 +83,9 @@ export const ROOMS_CONFIG = {
         "Coleta probabilística sem necessidade de premissa maior"
       ],
       correctAnswer: "Premissas gerais gerando certeza particular",
-      fieldClue: "Vá à Cantina (fechada/vazia) e busque o envelope lacrado no balcão.",
+      fieldClue: "No espaço onde a comunidade busca o sustento do corpo e os aromas se dissipam nos intervalos, agora desprovido do movimento costumeiro. Sobre a grande bancada de atendimento onde os pedidos costumam ser entregues, repousa um segredo lacrado.",
       secretCode: "DEDUTIVO-PREMISSA-44",
-      codeHint: "Formato esperado: DEDUTIVO-PREMISSA-XX (no envelope lacrado da Cantina)"
+      codeHint: "Formato esperado: DEDUTIVO-XXXX-XX"
     },
     beta: {
       question: "No rigor da metodologia científica, qual proposição sintetiza a mecânica fundamental e o limite epistêmico do Raciocínio Indutivo?",
@@ -95,9 +96,9 @@ export const ROOMS_CONFIG = {
         "Axiomas inquestionáveis derivados de autoridade acadêmica"
       ],
       correctAnswer: "Observações particulares gerando conclusão provável",
-      fieldClue: "Vá ao Auditório e encontre o envelope na porta lateral direita.",
+      fieldClue: "No majestoso recinto solene onde palestras magnas e assembleias ecoam para uma plateia imensa. Sem adentrar a nave principal, examine o portal lateral à destra de quem cruza a entrada.",
       secretCode: "INDUTIVO-CASOS-12",
-      codeHint: "Formato esperado: INDUTIVO-CASOS-XX (no envelope do Auditório)"
+      codeHint: "Formato esperado: INDUTIVO-XXXX-XX"
     }
   },
   4: {
@@ -114,9 +115,9 @@ export const ROOMS_CONFIG = {
         "Inconsistência estatística gerada por amostras não probabilísticas"
       ],
       correctAnswer: "Mudança de comportamento dos indivíduos ao serem observados",
-      fieldClue: "Vá ao Auditório e procure sob a poltrona central da primeira fileira.",
+      fieldClue: "Retorne ao salão das grandes apresentações acadêmicas. Vá até a primeiríssima fileira diante do tablado e localize o assento do meio: olhe onde os olhos comuns não enxergam, sob a estrutura do assento.",
       secretCode: "DIRETA-HAWTHORNE-22",
-      codeHint: "Formato esperado: DIRETA-HAWTHORNE-XX (sob a poltrona do Auditório)"
+      codeHint: "Formato esperado: DIRETA-XXXX-XX"
     },
     beta: {
       question: "Ao aplicar a técnica de observação indireta (pesquisa documental e análise de registros) conforme Prodanov & Freitas, qual representa a principal limitação inerente ao método?",
@@ -127,9 +128,9 @@ export const ROOMS_CONFIG = {
         "Obrigatoriedade de consentimento verbal imediato dos sujeitos observados"
       ],
       correctAnswer: "Perda de nuances e falta de interação em tempo real",
-      fieldClue: "Vá à Cantina vazia e procure o cartão colado debaixo da mesa 3.",
+      fieldClue: "No salão das refeições agora despovoado, onde as mesas guardam os ecos das conversas passadas. Procure o terceiro refúgio dos comensais e tateie o plano oculto fixado sob o tampo.",
       secretCode: "INDIRETA-PASSADO-66",
-      codeHint: "Formato esperado: INDIRETA-PASSADO-XX (cartão colado debaixo da mesa 3 da Cantina)"
+      codeHint: "Formato esperado: INDIRETA-XXXX-XX"
     }
   },
   5: {
@@ -138,13 +139,11 @@ export const ROOMS_CONFIG = {
     subtitle: "Diagnóstico Quantitativo e Matriz SWOT Combinada",
     iconName: "ShieldAlert",
     alfa: {
-      fieldClue: "Vá à Sala de Informática e localize os valores de Q1, Q2, Q3 e Q4 atrás do quadro branco.",
-      hintValues: "Valores do Quadro Branco: Q1 (Forças) = 80 | Q2 (Oportunidades) = 50 | Q3 (Fraquezas) = 20 | Q4 (Ameaças) = 30",
+      fieldClue: "O cofre final exige as variáveis ocultas da estratégia. Retorne ao ambiente das máquinas de computação onde os dados fluem. Busque o grande painel branco onde diagramas e ideias são rascunhados: os 4 quadrantes numéricos estão camuflados nas costas da estrutura onde a tinta nunca é vista pela turma.",
       diagnostics: [
         {
           id: "diag1",
-          label: "1. Capacidade Ofensiva [Q1 - Q3]:",
-          formula: "Q1 - Q3",
+          label: "1. Capacidade Ofensiva:",
           options: [
             { value: "40", label: "40 (Ofensiva Restrita)" },
             { value: "60", label: "60 (Ofensiva Seletiva)" },
@@ -155,8 +154,7 @@ export const ROOMS_CONFIG = {
         },
         {
           id: "diag2",
-          label: "2. Capacidade Defensiva [Q2 - Q4]:",
-          formula: "Q2 - Q4",
+          label: "2. Capacidade Defensiva:",
           options: [
             { value: "10", label: "10 (Vulnerabilidade Severa)" },
             { value: "20", label: "20 (Equilíbrio Crítico)" },
@@ -167,8 +165,7 @@ export const ROOMS_CONFIG = {
         },
         {
           id: "diag3",
-          label: "3. Posição Estratégica Geral [(Q1+Q2) - (Q3+Q4)]:",
-          formula: "[(Q1+Q2) - (Q3+Q4)]",
+          label: "3. Posição Estratégica Geral:",
           options: [
             { value: "60", label: "60 (Estabilidade Passiva)" },
             { value: "70", label: "70 (Sobrevivência Ativa)" },
@@ -180,13 +177,11 @@ export const ROOMS_CONFIG = {
       ]
     },
     beta: {
-      fieldClue: "Vá ao Jardim Central e abra a pasta presa nos galhos da árvore de amora.",
-      hintValues: "Valores da Pasta: Q1 (Forças) = 90 | Q2 (Oportunidades) = 80 | Q3 (Fraquezas) = 10 | Q4 (Ameaças) = 10",
+      fieldClue: "A chave mestra do diagnóstico não repousa entre paredes de concreto. No coração verde ao ar livre do campus, procure a guardiã natural que oferta pequenos frutos escuros e projeta sua sombra sobre a terra. Erga os olhos: entre sua copa e galhos elevados, um dossiê oculto guarda os quatro quadrantes do destino estratégico.",
       diagnostics: [
         {
           id: "diag1",
-          label: "1. Capacidade Ofensiva [Q1 - Q3]:",
-          formula: "Q1 - Q3",
+          label: "1. Capacidade Ofensiva:",
           options: [
             { value: "60", label: "60 (Ofensiva Seletiva)" },
             { value: "75", label: "75 (Ofensiva Avançada)" },
@@ -197,8 +192,7 @@ export const ROOMS_CONFIG = {
         },
         {
           id: "diag2",
-          label: "2. Capacidade Defensiva [Q2 - Q4]:",
-          formula: "Q2 - Q4",
+          label: "2. Capacidade Defensiva:",
           options: [
             { value: "50", label: "50 (Defesa Moderada)" },
             { value: "65", label: "65 (Resiliência Operacional)" },
@@ -209,8 +203,7 @@ export const ROOMS_CONFIG = {
         },
         {
           id: "diag3",
-          label: "3. Posição Estratégica Geral [(Q1+Q2) - (Q3+Q4)]:",
-          formula: "[(Q1+Q2) - (Q3+Q4)]",
+          label: "3. Posição Estratégica Geral:",
           options: [
             { value: "120", label: "120 (Expansão Tática)" },
             { value: "140", label: "140 (Crescimento Acelerado)" },
