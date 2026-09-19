@@ -1,7 +1,7 @@
 /**
  * Configuração dos Enigmas, Perguntas, Pistas Físicas e Códigos de Acesso
  * para a Equipe Alfa e Equipe Beta.
- * Enigmas crípticos de campo sem menção explícita de nomes de salas.
+ * Inclui metadados de Gabarito e Local Físico Real para o Painel do Docente.
  */
 
 export const ROOMS_CONFIG = {
@@ -20,6 +20,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Dado",
       fieldClue: "Onde os decretos ganham chancela e a alta gestão traça as diretrizes da instituição, guardiões silenciosos arquivam registros e decisões. Procure no epicentro do comando administrativo o invólucro que ostenta o selo 'SETZER'.",
+      fieldLocation: "Secretaria da Direção (envelope 'SETZER')",
       secretCode: "DADO-SINTAXE-31",
       codeHint: "Formato esperado: DADO-XXXX-XX"
     },
@@ -33,6 +34,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Energia",
       fieldClue: "No templo do silêncio sagrado onde mil mentes repousam impressas em estantes infinitas, procure onde o conhecimento humano foi encadernado. Entre as fileiras do saber catalogado, um tomo misterioso foi marcado com a cor do ouro solar.",
+      fieldLocation: "Biblioteca (livro com fita amarela)",
       secretCode: "ENERGIA-TERMODINAMICA-84",
       codeHint: "Formato esperado: ENERGIA-XXXX-XX"
     }
@@ -52,6 +54,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Valorativo, racional, sistemático, não verificável, infalível",
       fieldClue: "Ao ar livre, onde raízes abraçam a terra no coração geográfico do campus, procure o ser vivo que floresce e oferta pequenos frutos escuros sob o céu. Em sua casca rústica, um portal geométrico bidimensional aguarda a leitura óptica.",
+      fieldLocation: "Jardim Central (QR Code na árvore de amora)",
       secretCode: "FILOSOFICO-ARISTOTELES-9",
       codeHint: "Formato esperado: FILOSOFICO-XXXX-X"
     },
@@ -65,6 +68,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Factual, contingente, verificável",
       fieldClue: "No laboratório dos circuitos lógicos e feixes de silício, onde dezenas de mentes navegam pela malha de redes digitais. Encontre o primeiríssimo posto de visualização tecnológica, onde o monitor inicial esconde o código.",
+      fieldLocation: "Sala de Informática (QR Code no Monitor 01)",
       secretCode: "CIENTIFICO-ERATOSTENES-7",
       codeHint: "Formato esperado: CIENTIFICO-XXXX-X"
     }
@@ -84,6 +88,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Premissas gerais gerando certeza particular",
       fieldClue: "No espaço onde a comunidade busca o sustento do corpo e os aromas se dissipam nos intervalos, agora desprovido do movimento costumeiro. Sobre a grande bancada de atendimento onde os pedidos costumam ser entregues, repousa um segredo lacrado.",
+      fieldLocation: "Cantina (envelope lacrado no balcão)",
       secretCode: "DEDUTIVO-PREMISSA-44",
       codeHint: "Formato esperado: DEDUTIVO-XXXX-XX"
     },
@@ -97,6 +102,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Observações particulares gerando conclusão provável",
       fieldClue: "No majestoso recinto solene onde palestras magnas e assembleias ecoam para uma plateia imensa. Sem adentrar a nave principal, examine o portal lateral à destra de quem cruza a entrada.",
+      fieldLocation: "Auditório (envelope na porta lateral direita)",
       secretCode: "INDUTIVO-CASOS-12",
       codeHint: "Formato esperado: INDUTIVO-XXXX-XX"
     }
@@ -116,6 +122,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Mudança de comportamento dos indivíduos ao serem observados",
       fieldClue: "Retorne ao salão das grandes apresentações acadêmicas. Vá até a primeiríssima fileira diante do tablado e localize o assento do meio: olhe onde os olhos comuns não enxergam, sob a estrutura do assento.",
+      fieldLocation: "Auditório (sob a poltrona central da 1ª fileira)",
       secretCode: "DIRETA-HAWTHORNE-22",
       codeHint: "Formato esperado: DIRETA-XXXX-XX"
     },
@@ -129,6 +136,7 @@ export const ROOMS_CONFIG = {
       ],
       correctAnswer: "Perda de nuances e falta de interação em tempo real",
       fieldClue: "No salão das refeições agora despovoado, onde as mesas guardam os ecos das conversas passadas. Procure o terceiro refúgio dos comensais e tateie o plano oculto fixado sob o tampo.",
+      fieldLocation: "Cantina (cartão colado sob a mesa 3)",
       secretCode: "INDIRETA-PASSADO-66",
       codeHint: "Formato esperado: INDIRETA-XXXX-XX"
     }
@@ -140,10 +148,14 @@ export const ROOMS_CONFIG = {
     iconName: "ShieldAlert",
     alfa: {
       fieldClue: "O cofre final exige as variáveis ocultas da estratégia. Retorne ao ambiente das máquinas de computação onde os dados fluem. Busque o grande painel branco onde diagramas e ideias são rascunhados: os 4 quadrantes numéricos estão camuflados nas costas da estrutura onde a tinta nunca é vista pela turma.",
+      fieldLocation: "Sala de Informática (atrás do quadro branco)",
+      quadrantValues: "Q1 (Forças) = 80 | Q2 (Oportunidades) = 50 | Q3 (Fraquezas) = 20 | Q4 (Ameaças) = 30",
+      calculationNotes: "1. Cap. Ofensiva: 80 - 20 = 60 (Ofensiva Seletiva) | 2. Cap. Defensiva: 50 - 30 = 20 (Equilíbrio Crítico) | 3. Posição Geral: (80+50) - (20+30) = 80 (Desenvolvimento Controlado)",
       diagnostics: [
         {
           id: "diag1",
           label: "1. Capacidade Ofensiva:",
+          formula: "Q1 - Q3",
           options: [
             { value: "40", label: "40 (Ofensiva Restrita)" },
             { value: "60", label: "60 (Ofensiva Seletiva)" },
@@ -155,6 +167,7 @@ export const ROOMS_CONFIG = {
         {
           id: "diag2",
           label: "2. Capacidade Defensiva:",
+          formula: "Q2 - Q4",
           options: [
             { value: "10", label: "10 (Vulnerabilidade Severa)" },
             { value: "20", label: "20 (Equilíbrio Crítico)" },
@@ -166,6 +179,7 @@ export const ROOMS_CONFIG = {
         {
           id: "diag3",
           label: "3. Posição Estratégica Geral:",
+          formula: "[(Q1+Q2) - (Q3+Q4)]",
           options: [
             { value: "60", label: "60 (Estabilidade Passiva)" },
             { value: "70", label: "70 (Sobrevivência Ativa)" },
@@ -178,10 +192,14 @@ export const ROOMS_CONFIG = {
     },
     beta: {
       fieldClue: "A chave mestra do diagnóstico não repousa entre paredes de concreto. No coração verde ao ar livre do campus, procure a guardiã natural que oferta pequenos frutos escuros e projeta sua sombra sobre a terra. Erga os olhos: entre sua copa e galhos elevados, um dossiê oculto guarda os quatro quadrantes do destino estratégico.",
+      fieldLocation: "Jardim Central (pasta presa nos galhos da árvore de amora)",
+      quadrantValues: "Q1 (Forças) = 90 | Q2 (Oportunidades) = 80 | Q3 (Fraquezas) = 10 | Q4 (Ameaças) = 10",
+      calculationNotes: "1. Cap. Ofensiva: 90 - 10 = 80 (Ofensiva Plena) | 2. Cap. Defensiva: 80 - 10 = 70 (Defesa Estável) | 3. Posição Geral: (90+80) - (10+10) = 150 (Alavancagem Máxima)",
       diagnostics: [
         {
           id: "diag1",
           label: "1. Capacidade Ofensiva:",
+          formula: "Q1 - Q3",
           options: [
             { value: "60", label: "60 (Ofensiva Seletiva)" },
             { value: "75", label: "75 (Ofensiva Avançada)" },
@@ -193,6 +211,7 @@ export const ROOMS_CONFIG = {
         {
           id: "diag2",
           label: "2. Capacidade Defensiva:",
+          formula: "Q2 - Q4",
           options: [
             { value: "50", label: "50 (Defesa Moderada)" },
             { value: "65", label: "65 (Resiliência Operacional)" },
@@ -204,6 +223,7 @@ export const ROOMS_CONFIG = {
         {
           id: "diag3",
           label: "3. Posição Estratégica Geral:",
+          formula: "[(Q1+Q2) - (Q3+Q4)]",
           options: [
             { value: "120", label: "120 (Expansão Tática)" },
             { value: "140", label: "140 (Crescimento Acelerado)" },
