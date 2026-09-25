@@ -1,15 +1,42 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Lock, X, AlertCircle } from 'lucide-react';
 
+// Salt e Hash criptográfico unidirecional SHA-256 para autenticação do Docente
+// A senha em texto claro não existe no código nem no repositório
+const AUTH_SALT = 'adm_escape_salt_98421_sec';
+const AUTH_HASH = '6bbecf9a3fb06fad565c0083824752d0237208b55ed94558a88746942f30c1b6';
+
+async function verifyHash(inputPassword) {
+  if (!inputPassword) return false;
+  try {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(AUTH_SALT + inputPassword.trim());
+    const hashBuffer = await window.crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex === AUTH_HASH;
+  } catch (err) {
+    console.error('Erro na validação criptográfica:', err);
+    return false;
+  }
+}
+
 export default function ModalAdminAuth({ isOpen, onClose, onSuccess }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [isValidating, setIsValidating] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === 'admin123') {
+    if (!password.trim() || isValidating) return;
+
+    setIsValidating(true);
+    const isValid = await verifyHash(password);
+    setIsValidating(false);
+
+    if (isValid) {
       setError(false);
       setPassword('');
       onSuccess();
@@ -34,7 +61,7 @@ export default function ModalAdminAuth({ isOpen, onClose, onSuccess }) {
           </div>
           <div>
             <h3 className="text-lg font-bold text-white font-tech">Acesso do Professor</h3>
-            <p className="text-xs text-slate-400">Painel de controle e monitoramento em tempo real</p>
+            <p className="text-xs text-slate-400">Autenticação criptográfica de alta segurança</p>
           </div>
         </div>
 
@@ -64,7 +91,7 @@ export default function ModalAdminAuth({ isOpen, onClose, onSuccess }) {
             {error && (
               <p className="flex items-center gap-1.5 text-xs text-rose-400 mt-2 font-medium">
                 <AlertCircle className="w-3.5 h-3.5" />
-                Senha incorreta. (Dica: utilize a senha informada nas instruções)
+                Senha incorreta. Acesso restrito ao corpo docente.
               </p>
             )}
           </div>
@@ -79,9 +106,10 @@ export default function ModalAdminAuth({ isOpen, onClose, onSuccess }) {
             </button>
             <button
               type="submit"
-              className="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-cyan-500/20 transition transform active:scale-95"
+              disabled={isValidating || !password.trim()}
+              className="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-cyan-500/20 transition transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Autenticar
+              {isValidating ? 'Validando Hash...' : 'Autenticar'}
             </button>
           </div>
         </form>

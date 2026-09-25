@@ -58,7 +58,7 @@ Aplicação web interativa em tempo real desenvolvida para conduzir uma dinâmic
 ## 👨‍🏫 Painel do Professor (`/admin`)
 
 - **Acesso**: Link no rodapé ou no cabeçalho, ou navegando para `/admin` (ou `#admin`).
-- **Senha de Administrador**: `admin123`.
+- **Autenticação**: Protegido por hash criptográfico unidirecional SHA-256 com salt. A senha é exclusiva do corpo docente e não consta no repositório.
 - **Recursos**:
   - Acompanhamento simultâneo ao vivo das equipes Alfa e Beta.
   - Exibição de: Sala Atual, Cronômetro em tempo real, Pontuação, Quantidade de Erros e Integrantes.
